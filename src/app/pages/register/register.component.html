@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+
+    <ion-card-content>
+      <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+        <ion-item class="item">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" id="inputEmail" class="form-control" formControlName="gmail" required autofocus></ion-input>
+        </ion-item>
+
+        <ion-item class="item" lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" class="form-control" formControlName="password" required></ion-input>
+        </ion-item>
+        
+
+
+        <ion-button type="submit" expand="block" [disabled]="!fomrRegister.valid">Resgistrar</ion-button>
+        <ion-button type="button" expand="block" color="medium" fill="clear" (click)="volver()">Volver</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+     Nuevas notas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<form [formGroup]="formNota" (ngSubmit)="addNote()">
+  <ion-item>
+      <ion-label>Titulo</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Descripcion</ion-label>
+    <ion-textarea formControlName="description"></ion-textarea>
+</ion-item>
+
+  <ion-button expand="full" type="submit"
+  [disabled]="this.formNota.invalid">Agregar</ion-button>
+
+
+</form>
+
+
+</ion-content>

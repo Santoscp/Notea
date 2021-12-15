@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="formNota" (ngSubmit)="editNote()">
+    <ion-item>
+      <ion-label>Titulo </ion-label>
+      <ion-input type="text" formControlName="title" [(ngModel)]="this.note.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripcion </ion-label>
+      <ion-textarea formControlName="description" [(ngModel)]="this.note.description"></ion-textarea>
+    </ion-item>
+    <ion-button  type="submit" expand="block" [disabled]="this.formNota.invalid">Guardar</ion-button>
+    <ion-button type="button" expand="block"(click)="volver()">Volver</ion-button>
+
+  </form>
+</ion-content>

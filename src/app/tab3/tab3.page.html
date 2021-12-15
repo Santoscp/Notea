@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Contacto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  ES<ion-toggle mitoggle></ion-toggle>EN
+  <p></p>
+  <ion-button (click)="hazFoto()">
+    <ion-icon name="camera">
+
+     
+    </ion-icon>
+
+    
+  </ion-button>
+<ion-img *ngIf="this.image" [src]="this.image"></ion-img>
+</ion-content>
