@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Notas</a>
+    <button class="navbar-toggler" type="button" data-bs- toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-
+      controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle
+  navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+        <a class="nav-link" routerLink="/new">Nueva nota</a>
+        <a class="nav-link" routerLink="/about">Acerca de</a>
+        <li class="nav-item dropdown" *ngIf="this.loginS.user">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cuenta
+          </a>
+          <ul class="dropdown-menu">
+            <li> <span style="padding:10px;">{{this.loginS.user!.name}}</span></li>
+            <li> <span style="padding:10px;">{{this.loginS.user!.email}}</span></li>
+            <li> <img style="padding:10px;" [src]="this.loginS.user!.photoUrl"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" (click)="logout()">
+                Logout </a></li>
+          </ul>
+        </li>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="submit()" >
+<div class="form-floating mb-3">
+    <input #title type="text" class="form-control" id="floatingInput" formControlName="title" >
+    <label for="floatingInput">Titutlo</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="floatingPassword" formControlName="description" >
+    <label for="floatingPassword">Descripcion</label>
+  </div>
+  <input type="hidden" formControlName="id">
+  <button type="submit" class="btn btn-primary" [disabled]="this.form.status!='VALID'">GUARDAR</button>
+</form>
