@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Notea</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link  rel="icon" type="image/png" sizes="72x72"  href="assets/icon-72x72.png">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./node_modules/bootstrap/dist/css/bootstrap.css'>
+    <script src='./node_modules/bootstrap/dist/js/bootstrap.bundle.js'></script>
+</head>
+<body>
+    <!-- HEAD NAV BAR-->
+    <nav class="navbar navbar-light" style="background-color: rgba(65, 122, 170,1);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color:white">
+            <img src="./assets/notas.png" alt="Notea" width="30" height="24" class="d-inline-block align-text-top">
+            Notea
+          </a>
+        </div>
+      </nav>
+    <!-- /HEAD NAV BAR-->
+
+   <!-- CONTAINER -->
+    <div class="container">
+        <table id="tableNotes" class="table table-striped">
+           
+        </table>
+    </div>
+   <!-- /CONTAINER -->
+
+    <!-- FAV BUTTON -->
+    <div class="favbutton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addNote()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="rgba(65, 122, 170,1)" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+        </svg>
+    </div>
+    <!-- / FAV BUTTON-->
+   
+
+    <!-- MODAL -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Insertar nueva nota</h5>
+          <button id="closeModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input id="title" class="form-control" type="text" placeholder="Título de la nota">
+            <input id="description" style="margin-top:20px" class="form-control" type="text" placeholder="Descripción">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="save()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+ 
+
+    <!-- /MODAL -->
+
+    <!-- MODAL EDIT  -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar nota</h5>
+          <button id="editModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input id="title" class="form-control" type="text" placeholder="Título de la nota">
+            <input id="description" style="margin-top:20px" class="form-control" type="text" placeholder="Descripción">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="editNote()">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+ 
+
+    <!-- /MODAL EDIT -->
+   <script src="dist/main.js"></script>
+</body>
+</html>

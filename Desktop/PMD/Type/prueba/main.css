@@ -1,0 +1,9 @@
+.favbutton{
+    position:fixed;
+    bottom:10px;
+    left: calc(50% - 40px);
+    cursor: pointer;
+}
+button.btn-secondary {
+    background-color: #5c636a!important;
+}
